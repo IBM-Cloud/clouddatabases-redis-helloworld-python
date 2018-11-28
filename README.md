@@ -51,18 +51,20 @@ clouddatabases-redis-helloworld-python is a sample IBM Cloud application which s
 
    ```shell
    git clone https://github.com/IBM-Cloud/clouddatabases-redis-helloworld-python.git
-   ```
+   ```   
 
 8. `cd` into this newly created directory. The code for connecting to the service, and reading from and updating the database can be found in `server.py`. See [Code Structure](#code-structure) and the code comments for information on the app's functions. There's also `template` and `static` directories, which contain the html, style sheets and javascript for the web app. For now, the only file you need to update is the application manifest.
 
-9. Update the `manifest.yml` file.
+9. Make sure that you store a local copy of the self-signed certificate. You'll need to go into the file `server.py` and add the location of your self-signed certificate to `ssl_ca_certs` when connecting to the database.
+
+10. Update the `manifest.yml` file.
 
    - Change the `name` value. The value you choose will be the name of the app as it appears in your IBM Cloud dashboard.
    - Change the `route` value to something unique. This will make be the base URL of your application. It should end with `.mybluemix.net`. For example `example-helloworld-python.mybluemix.net`.
 
    Update the `service` value in `manifest.yml` to match the name of your database service instance name.
 
-10. Push the app to IBM Cloud. When you push the app it will automatically be bound to the service.
+11. Push the app to IBM Cloud. When you push the app it will automatically be bound to the service.
 
   ```shell
   ibmcloud cf push
