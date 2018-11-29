@@ -55,7 +55,11 @@ clouddatabases-redis-helloworld-python is a sample IBM Cloud application which s
 
 8. `cd` into this newly created directory. The code for connecting to the service, and reading from and updating the database can be found in `server.py`. See [Code Structure](#code-structure) and the code comments for information on the app's functions. There's also `template` and `static` directories, which contain the html, style sheets and javascript for the web app. For now, the only file you need to update is the application manifest.
 
-9. Make sure that you store a local copy of the databases's self-signed certificate. You'll need to go into the file `server.py` and add the location of your self-signed certificate to `ssl_ca_certs` when connecting to the database.
+9. Make sure that you store a local copy of the databases's self-signed certificate. You'll need to go into the file `server.py` and add the location of your self-signed certificate to `ssl_ca_certs` when connecting to the database. [Install](https://console.bluemix.net/docs/databases-cli-plugin/cloud-databases-cli.html#cloud-databases) and use the IBM Cloud Databases plugin with the IBM Cloud CLI tool to get your self-signed certificate with the following command:
+
+```shell
+ibmcloud cdb cacert <database deployment name>
+```
 
 10. Update the `manifest.yml` file.
 
